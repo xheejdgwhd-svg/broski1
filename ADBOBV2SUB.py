@@ -9,8 +9,7 @@ import re
 from datetime import datetime, timedelta
 import json
 import os
-from flask import Flask, request
-import logging
+from keep_alive import keep_alive
 
 # === НАСТРОЙКИ ===
 DISCORD_CHANNEL_ID = "1407975317682917457"
@@ -525,4 +524,5 @@ def main():
     run_telegram_bot()
 
 if __name__ == "__main__":
-    main()
+    keep_alive()  # Запускаем Flask сервер для Railway
+    main()        # Запускаем бота
